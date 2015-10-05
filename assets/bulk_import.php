@@ -9,7 +9,6 @@
 
         if (($handle = fopen($temp_file, "r")) !== FALSE) {
             while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-
                 $asset_id = $data[0];
                 $asset_name =  addslashes($data[1]);
                 $serial_number = addslashes($data[2]);
