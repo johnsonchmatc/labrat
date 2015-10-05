@@ -33,6 +33,10 @@
 
 <body>
 
+<?php
+  define('SITE_ROOT', '/course_materials/Units/week05/sample');
+?>
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -44,13 +48,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Lab Rat</a>
+                <a class="navbar-brand" href="<?= SITE_ROOT ?>">Lab Rat</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Assets</a>
+                    <a href="<?= SITE_ROOT ?>/assets/index.php">Assets</a>
                     </li>
                     <li>
                         <a href="#">Users</a>
