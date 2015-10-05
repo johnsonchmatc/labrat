@@ -36,7 +36,24 @@
   <div class="panel panel-default col-md-6">
     <div class="panel-heading">New Items in Inventory</div>
     <div class="panel-body">
-      Panel content
+      <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Asset </th>
+            <th>Serial Number</th>
+            <th>Date Added</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
