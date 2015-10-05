@@ -22,12 +22,6 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
         </tbody>
       </table>
     </div>
@@ -36,6 +30,13 @@
   <div class="panel panel-default col-md-6">
     <div class="panel-heading">New Items in Inventory</div>
     <div class="panel-body">
+      <?php
+          $query = "SELECT * FROM Assets ORDER BY id DESC;";
+          $result = mysqli_query($mysqli, $query);
+          if (!$result) {
+              exit("Database query ($query) error: ". mysql_error($mysqli));
+          }
+      ?>
       <table class="table table-striped table-hover ">
         <thead>
           <tr>
@@ -46,12 +47,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-          </tr>
+          <?php while ($record = mysqli_fetch_array($result)) { ?>
+            <tr>
+              <td><?= $record['Name'] ?></td>
+              <td><?= $record['AssetID'] ?></td>
+              <td><?= $record['SerialNumber'] ?></td>
+              <td><?= $record['CreatedAt'] ?></td>
+            </tr>
+          <?php } ?>
         </tbody>
       </table>
     </div>

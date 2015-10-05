@@ -32,7 +32,9 @@
 </head>
 
 <body>
-
+<?php
+    define('SITE_ROOT', '/labrat');
+?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -50,7 +52,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Assets</a>
+                        <a href="<?= SITE_ROOT ?>/assets/index.php">Assets</a>
                     </li>
                     <li>
                         <a href="#">Users</a>
