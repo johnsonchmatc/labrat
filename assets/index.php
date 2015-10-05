@@ -1,5 +1,5 @@
 <?php include('../header.php') ?>        
-<?php include('../db.php') ?>
+<?php require_once('../db.php') ?>
 <h2>Assets</h2>
 <?php
     $query = "SELECT * FROM Assets;";
