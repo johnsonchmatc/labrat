@@ -28,7 +28,8 @@
       
     if (isset($asset_name) && isset($asset_id) && isset($serial_number) && isset($description)) 
     {
-        $query = "INSERT INTO Assets (AssetID, SerialNumber, Name, Description) VALUES ('$asset_id', '$serial_number', '$asset_name', '$description');";
+                $query = "INSERT INTO Assets (AssetID, SerialNumber, Name, Description, CreatedAt) 
+                                 VALUES ('$asset_id', '$serial_number', '$asset_name', '$description', '$today');";
         $result = mysqli_query($mysqli, $query);
         if (!$result) {
             echo $query;

@@ -13,9 +13,10 @@
                 $asset_name =  addslashes($data[1]);
                 $serial_number = addslashes($data[2]);
                 $description = $data[3];
+                $today = date("Y-m-d H:i:s");
 
-                $query = "INSERT INTO Assets (AssetID, SerialNumber, Name, Description) 
-                                 VALUES ('$asset_id', '$serial_number', '$asset_name', '$description');";
+                $query = "INSERT INTO Assets (AssetID, SerialNumber, Name, Description, CreatedAt) 
+                                 VALUES ('$asset_id', '$serial_number', '$asset_name', '$description', '$today');";
                 $result = mysqli_query($mysqli, $query);
                 if (!$result) {
                     echo $query;

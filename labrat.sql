@@ -11,3 +11,5 @@ CREATE TABLE `Assets` (
   `Name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+
+
