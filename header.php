@@ -33,7 +33,26 @@
 
 <body>
 <?php
+    session_start();
+
+    // If the session vars aren't set, try to set them with a cookie
+    if (!isset($_SESSION['user_id'])) {
+      if (isset($_COOKIE['user_id']) && isset($_COOKIE['username'])) {
+        $_SESSION['user_id'] = $_COOKIE['user_id'];
+        $_SESSION['username'] = $_COOKIE['username'];
+      }
+    }
+
     define('SITE_ROOT', '/labrat');
+
+    if (!isset($_SESSION['user_id'])) 
+    {
+        $site_root = SITE_ROOT;
+        if ($_SERVER['PHP_SELF'] != "$site_root/login.php" )
+        { 
+            header("Location: $site_root/login.php");
+        }
+    } 
 ?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -55,10 +74,14 @@
                         <a href="<?= SITE_ROOT ?>/assets/index.php">Assets</a>
                     </li>
                     <li>
-                        <a href="#">Users</a>
+                        <a href="<?= SITE_ROOT ?>/users/index.php">Users</a>
                     </li>
                     <li>
-                        <a href="#">Log</a>
+                        <?php if (empty($_SESSION['user_id'])) { ?>
+                            <a href="<?= SITE_ROOT ?>/login.php">Login</a>
+                        <?php } else { ?>
+                            <a href="<?= SITE_ROOT ?>/logout.php">Logout</a>
+                        <?php } ?> 
                     </li>
                 </ul>
             </div>
